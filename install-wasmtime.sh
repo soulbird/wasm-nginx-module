@@ -33,6 +33,7 @@ if [ -d wasmtime-c-api ]; then
 fi
 mv wasmtime-${VER}-${ARCH}-${os}-c-api wasmtime-c-api
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+source "$HOME/.cargo/env"
 git clone https://github.com/bytecodealliance/wasmtime -b ${VER} --depth 1 \
         && cd wasmtime \
         && git submodule update --init \
